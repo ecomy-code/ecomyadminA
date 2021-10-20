@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block body %}
+<div class="container">
+  <h1>Hola Jefe</h1></br>
+   <h2>Añadir producto nuevo</h1></br></br>
+  <div class="content">
+    <form action="{{url_for('.cargar_producto')}}" enctype="multipart/form-data" method="POST"> 
+      <div class="user-details">
+        <div class="input-box">
+          <span>Nombre del producto</span>
+          <input name="namep" type="text" placeholder=": " required />
+        </div></br>
+        <div class="input-box">
+          <span >Precio</span>
+          <input name = "preciop" type="text" placeholder="₡200.000,08" required />
+        </div></br>
+        <div class="input-box">
+          <span >Cantidad</span>
+          <input type="text" name="cantidadp" placeholder="#" required />
+        </div></br></br>
+
+        <div class="input-box">
+          <span >Detalle del producto</span>
+          <textarea type="text" name="detallep" required rows="4" cols="50"></textarea>
+          
+        </div>
+        <div>
+          <input type="file" name="pic" /></br></br>
+          <input type="file" name="pic2" /></br></br>
+        </div></br></br>
+      </div>
+      <div>
+        <input type="submit" value="Continuar -->" />
+      </div>
+      </br></br>
+    </form>
+    </br></br>
+  </div>
+</div>
+
+{% endblock %}

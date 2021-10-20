@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block body %}
+
+
+  <div class="row">
+    <div class="col-md-7">
+      <table class="table table-striped table-hover table-bordered table-sm bg-white">
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Empresa</td>
+            <td>Nombre</td>
+            <td>Detalle</td>
+            <td>Precio</td>
+            <td>fotoa</td>
+            <td>fotob</td>
+            <td>fecha</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for product_date in productos_array %}
+          <tr>
+            <td> {{product_date.0}}</td>
+            <td> {{product_date.1}}</td>
+            <td> {{product_date.2}}</td>
+            <td> {{product_date.3}}</td>
+            <td> {{product_date.4}}</td>
+            <td> <img src="{{ url_for('static', filename = product_date.5)  }}"  alt="FotoA" align="middle" >  </td>
+            <td> <img src="{{ url_for('static', filename = product_date.6)  }}"  alt="FotoA" align="middle" >  </td>
+            <td>{{product_date.7}}</td>
+
+
+
+
+            <td>
+              <a href="#" class="btn btn-secondary">Edit</a>
+              <a href="#" class="btn btn-danger btn-delete">Borrar</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
